@@ -1,0 +1,147 @@
+#container{
+  background-color: #f5f5f5;
+  width: 100%;
+  height: 100%;
+}
+
+#header{
+  width: 100%;
+  height: 70px;
+  background-color: #31e0db;
+}
+#content{
+  width: 100%;
+  height:calc(100% - 110px);
+  background-color: white;
+}
+#footer{
+  width: 100%;
+  height: 40px;
+  background-color: gray;
+}
+#header .headerlogo{
+  width: 40px;
+  position: relative;
+  top: 15px;
+  margin-left: 10px;
+  float: left;
+}
+
+#header .headertext{
+  position: relative;
+  top: 15px;
+  margin-left: 10px;
+  font-size: 20pt;
+  color: white;
+  font-weight: bold;
+  float: left;
+}
+
+#header .headertext span{
+  color: red;
+}
+#header .signinlogo{
+  width: 40px;
+  position: relative;
+  top: 15px;
+  margin-right: 10px;
+  float: right;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#header .signinbutton{
+  position: relative;
+  margin-right: 10px;
+  top: 25px;
+  float: right;
+  color: white;
+  font-size: 12pt;
+  cursor: pointer;
+}
+
+#header .signinbutton:hover{
+  color: rgb(51, 51, 49);
+  text-decoration: underline;
+}
+#header .signinlogo:hover{
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+#header .signintext:hover, #header .signinlogo:hover + .signintext{
+  color: rgb(51, 51, 49);
+  text-decoration: underline;
+}
+
+#content .contenttext1{
+  position: relative;
+  margin-left: 30px;
+  top: 80px;
+  font-size: 20pt;
+  font-weight: bold;
+  color: green;
+}
+
+#content .contenttext2{
+  position: relative;
+  margin-left: 30px;
+  top: 100px;
+  font-size: 13pt;
+  width: 50%;
+  color: rgb(210, 138, 86);
+}
+
+#content .contenttext3{
+  position: relative;
+  margin-left: 30px;
+  top: 120px;
+  font-size: 13pt;
+  width: 50%;
+  color: rgb(63, 140, 222);
+}
+
+#content .personimg{
+  position: relative;
+  float: right;
+  top: 30px;
+  width: 400px;
+  margin-right: 30px;
+  border-radius: 10px;
+}
+
+#footer .socialmedia1{
+  position: relative;
+  top: 5px;
+  width: 30px;
+  margin-left: 10px;
+  cursor: pointer;
+  float: right;
+  border-radius: 10px;
+}
+#footer .socialmedia2{
+  position: relative;
+  top: 5px;
+  width: 30px;
+  margin-left: 10px;
+  cursor: pointer;
+  float: right;
+   border-radius: 10px;
+}
+#footer .socialmedia3{
+  position: relative;
+  top: 5px;
+  width: 30px;
+  margin-left: 10px;
+  cursor: pointer;
+  float: right;
+   border-radius: 10px;
+}
+#footer .footertext{
+  position: relative;
+  top: 10px;
+  margin-left: 10px;
+  font-size: 12pt;
+  color: white;
+  float: left;
+}

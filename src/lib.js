@@ -1,0 +1,1 @@
+export const imgurl = import.meta.env.BASE_URL;
