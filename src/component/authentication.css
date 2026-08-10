@@ -105,7 +105,7 @@
     opacity: 0.9;
 }
 #auth .container .container_content label{
- text-align: right;
+ text-align: left;
   margin-top: 10px;  
 }
 #auth .container .container_content label span{
