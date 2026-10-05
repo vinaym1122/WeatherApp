@@ -1,7 +1,7 @@
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './authentication.css';
-import { imgurl, apibaseurl, callApi } from '../lib';
+import { imgurl, apiUrl, callApi } from '../lib';
 
 
 function Authentication() {
@@ -108,6 +108,29 @@ function Authentication() {
     if (newErrors.username || newErrors.password) {
       return;
     }
+
+    const loginIdentifier = signinData.username.trim();
+    const loginPayload = {
+      password: signinData.password,
+      ...(loginIdentifier.includes('@') ? { email: loginIdentifier } : { username: loginIdentifier }),
+      ...(/^\d+$/.test(loginIdentifier) ? { mobile: loginIdentifier } : {})
+    };
+
+    callApi("POST", apiUrl("user/login"), loginPayload, null, signinResponseHandler);
+  }
+
+  function signinResponseHandler(res) {
+    const response = res && typeof res === 'object' ? res : {};
+    const message = response.message || 'Login failed';
+
+    if (response.code !== 200 && response.success !== true) {
+      alert(message);
+      return;
+    }
+  else{
+    localStorage.setItem("token", response.token);
+    window.location.replace("/homepage");
+  }
   }
 
  function signup() {
@@ -146,7 +169,7 @@ function Authentication() {
     password: signupData.password
   };
 
-  callApi("POST", apibaseurl + "user/register", userData, null, signupResponseHandler);
+  callApi("POST", apiUrl("user/register"), userData, null, signupResponseHandler);
 
   function signupResponseHandler(res) {
     const response = res && typeof res === "object" ? res : {};
@@ -168,6 +191,7 @@ function Authentication() {
     setIssignin(true);
   }
 }
+
 
   return (
     <div id="auth">

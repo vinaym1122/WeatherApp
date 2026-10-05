@@ -1,0 +1,4 @@
+.weather-board {
+    display: grid;
+    grid-template-columns: 200px calc(100% - 200px);
+}
