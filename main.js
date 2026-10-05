@@ -10,10 +10,7 @@ import weatherRouter from './controllers/weatherController.js'
 const app = express();
 app.use(express.json());
 
-const corsOptions = {
-  origin: ["http://localhost:5173", "http://localhost:3000"]
-};
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(["/user", "/users"], userRouter);
 app.use(["/role", "/roles"], roleRouter);
