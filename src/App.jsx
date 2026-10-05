@@ -1,13 +1,15 @@
 
-import { useState } from 'react'
-import {imgurl} from './lib.js'
+import { useNavigate } from 'react-router-dom'
+import { imgurl } from './lib.js'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-   function showAuthentication() {
-    window.location.replace("/Authentication");
+  const navigate = useNavigate();
+
+  function showAuthentication() {
+    navigate('/authentication');
   }
+
   return (
    <div id="container">
      <div id="header">
