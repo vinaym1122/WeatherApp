@@ -1,0 +1,9 @@
+$kind: http-request
+name: "http://localhost:4000/users/login"
+description: ""
+url: "http://localhost:4000/users/login"
+method: POST
+body:
+  type: json
+  content: "{\r\n    \"email\": \"your-email@example.com\",\r\n    \"password\": \"your-password\"\r\n}"
+order: 1788000397762
